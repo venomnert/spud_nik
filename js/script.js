@@ -190,7 +190,8 @@ $(function() {
     }
 
 
-	$('.spud-list').on('click tap', '.hole-content__spud',function () {
+	$('.spud-list').on('click touchstart', '.hole-content__spud',function () {
+		alert('clicked');
 		var spudId = $(this).parents('li').attr('id');
 		var spudImg = $(this).attr('src');
 		var spudPoints = characterInfo[spudImg].points;
