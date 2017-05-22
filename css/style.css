@@ -195,6 +195,86 @@ li {
 .time-container h2 {
 	font-size: 56px;
 }
+
+/* H1 Media Query */
+@media (max-width: 830px) {
+	.container h1 {
+		font-size: 65px;
+	}
+}
+@media (max-width: 650px) {
+	.container h1 {
+		font-size: 60px;
+	}
+}
+@media (max-width: 550px) {
+	.container h1 {
+		font-size: 45px;
+	}
+}
+@media (max-width: 435px) {
+	.container h1 {
+		font-size: 38px;
+	}
+}
+@media (max-width: 350px) {
+	.container h1 {
+		font-size: 30px;
+	}
+}
+
+/*Hole and Spud media query*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.hole-content {
+		height: 115px; 
+	}
+	.hole-content__spud {
+		height: 115px;
+		transform: translate(-50%, 115px);
+	}
+	.animate--down {
+		transform: translate(-50%, 115px);
+	}
+	.animate--up {
+		transition: all 1.5s;
+		transform: translate(-50%, 0);
+	}
+	
+}
+
+/*Changed the original height setting from 125px --> 120px */
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.hole-content {
+		height: 120px; 
+	}
+	.hole-content__spud {
+		height: 120px;
+		transform: translate(-50%, 120px);
+	}
+	.animate--down {
+		transform: translate(-50%, 120px);
+	}
+	.animate--up {
+		transition: all 1.5s;
+		transform: translate(-50%, 0);
+	}
+}
+@media only screen and (min-width: 768px) {
+	.hole-content {
+		height: 150px; 
+	}
+	.hole-content__spud {
+		height: 150px;
+		transform: translate(-50%, 150px);
+	}
+	.animate--down {
+		transform: translate(-50%, 150px);
+	}
+	.animate--up {
+		transition: all 1.5s;
+		transform: translate(-50%, 0);
+	}
+}
 /*#spud-0:hover .spud-container__spud {
     /*transform: translateY(0);*/
 

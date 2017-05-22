@@ -50,7 +50,7 @@ $(function() {
 	var screenSize = {
 		//[screen min, screen max, spud height, hole width]
 		small: [0, 480,115, 200],
-		medium: [480, 768, 125, 250],
+		medium: [480, 768, 120, 250],
 		large: [768, 1170, 150, 285]
 	}
 	var numberOfContainers = levels.easy.numberOfContainers;
@@ -78,6 +78,7 @@ $(function() {
 			spudHeight = screenSize.large[2];
 			holeWidth = screenSize.large[3];
 		}
+		console.log('I am called', holeWidth);
 	}
 
 	//Generate random location of container, append to html
@@ -110,6 +111,11 @@ $(function() {
 		$('.spud-list').append(spudContainer);
 	}
 
+	//Remove previous containers
+	function removeContainers() {
+		containerCoords = [];
+		$('.spud-list').empty();
+	}
 	// draw containers, quantity is based on selected difficulty level 
 	function drawContainers(numberOfContainers) {
 		for (var i = 0; i < numberOfContainers; i++) {
@@ -235,10 +241,24 @@ $(function() {
         }
     }
 
+
+    // Initialize the game screen
 	setSpudHeight();
-	$(window).on('resize', setSpudHeight);
 	drawContainers(numberOfContainers);
 	containerContentZIndex(containerCoords);
+
+	// Every single time the screen is changed, first debounce the event
+	// Clear the existing containers
+	// Re-initalize the game screen
+	$(window).resize(function () {
+		clearTimeout(window.resizedFinished);
+		window.resizedFinished = setTimeout(function() {
+			removeContainers();
+			setSpudHeight();
+			drawContainers(numberOfContainers);
+			containerContentZIndex(containerCoords);
+		}, 250);
+	});
 
 	gameTimerId = window.setInterval(function(){
 		if (gameTimer % 4000 === 0) {
