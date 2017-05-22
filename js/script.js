@@ -78,7 +78,7 @@ $(function() {
 			spudHeight = screenSize.large[2];
 			holeWidth = screenSize.large[3];
 		}
-		console.log('I am called', holeWidth);
+		// console.log('I am called', holeWidth);
 	}
 
 	//Generate random location of container, append to html

@@ -106,7 +106,7 @@ li {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-color: #fe7f4a;
-	height: 90vh;
+	height: 100vh;
 }
 
 .spud-list {
@@ -208,9 +208,11 @@ li {
 	}
 }
 @media (max-width: 550px) {
-	.container h1 {
-		font-size: 45px;
-	}
+	.container h1 { font-size: 45px; }
+	h2 { font-size: 25px; }
+	h3 { font-size: 15px; }
+	.time-container h3 { line-height: 1.4; }
+	.time-container h2 { font-size: 36px; }
 }
 @media (max-width: 435px) {
 	.container h1 {
@@ -221,6 +223,9 @@ li {
 	.container h1 {
 		font-size: 30px;
 	}
+	h2 { font-size: 21px; }
+	.time-container h3 { line-height: 1.2; }
+	.time-container h2 { font-size: 26px; }
 }
 
 /*Hole and Spud media query*/
