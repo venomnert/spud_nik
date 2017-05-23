@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Spud Nik</title>
 	<link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
 	<link rel="shortcut icon" href="img/spud--favicon--large.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		@font-face {
 			font-family: "JI Chunky Caps";
@@ -15,24 +15,45 @@
 	</style>
 </head>
 <body>
-	<!-- <div class="overlay">
-		<main>Nik the spud has been cloned as an experiment -- but the experiment went awry! A small percentage of the clones have mutated and formed an army from the others -- they are trying to take over Mars. Help Nik smoosh his evil clones before they can carry out their plot, but watch out for the locals!</main>
-	</div> -->
 	<div class="container wrapper--lg">
+		<div class="overlay">
+			<h1>Spud Nik</h1>
+			<div class="overlay-middle-row">
+					<main>Nik the spud has been cloned!<br><br>Some clones mutated and formed an army -- they are trying to invade Mars!! <br><br>Help Nik smoosh his evil clones before they carry out their plot, but watch out for the locals.</main>
+					<ul class="characterInfoGallery">
+								
+					</ul>
+			</div>
+			<div class="difficulty-buttons">
+				<button class="difficulty-button button-easy">Easy</button>
+				<button class="difficulty-button button-medium current-difficulty">Medium</button>
+				<button class="difficulty-button button-hard">Hard</button>
+			</div>
+			<button class="start">
+				START
+			</button>
+		</div><!--  end of overlay -->
 		<h1>Spud Nik</h1>
 		<ul class="spud-list">
 		</ul>
 		<div class="game-info">
-			<div class="point-container">
-				<h3>Score:</h3>
-				<h2 class="points">0pts</h2>
+			<div class="LHS">
+				<div class="point-container">
+					<h3>Score:</h3>
+					<h2 class="points">0pts</h2>
+				</div>
+				<div class="time-container">
+					<h3>Time<br>Left:</h3>
+					<h2 class="time">0s</h2>
+				</div>
 			</div>
-			<div class="time-container">
-				<h3>Time<br>Left:</h3>
-				<h2 class="time horizontal">0s</h2>
+			<div class="RHS">
+				<div class="burger">
+					<button class="menu-button">Menu</button>
+				</div>
 			</div>
-		</div>
-	</div>
+		</div> <!-- end of game-info -->
+	</div> <!-- end of wrappper--lg -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
@@ -42,3 +63,33 @@
 
 <!-- sweet potato:
 https://images.google.ca/imgres?imgurl=http%3A%2F%2Fwww.fruitycuties.com%2Fimages%2Fhumour%2F118-cartoon-sweet-potato-joke.gif&imgrefurl=http%3A%2F%2Fwww.fruitycuties.com%2Farchive%2F118-cartoon-sweet-potato-joke.htm&docid=xIaaYVqr43nmNM&tbnid=BVRMCEpz1lzUcM%3A&vet=1&w=500&h=315&source=sh%2Fx%2Fim -->
+
+<!-- game music:
+http://soundimage.org/sci-fi/
+	LIGHT YEARS_V001 – An expanded version of the original. (1:40)  Royalty-Free.
+
+	STEAMTECH MAYHEM – Quiet, frantic, wispy techno piece. (1:32)
+
+martian smoosh
+
+https://www.freesound.org/people/Kastenfrosch/sounds/162486/
+https://www.freesound.org/people/Kastenfrosch/sounds/162469/
+https://www.freesound.org/people/Kastenfrosch/sounds/162461/
+http://soundbible.com/632-Snow-Ball-Throw-And-Splat.html
+http://www.freesfx.co.uk/rx2/mp3s/6/18594_1464800298.mp3
+
+yukon smoosh
+
+http://soundbible.com/1728-Spit-Splat-2.html
+
+sweet P smoosh
+http://soundbible.com/1948-Slap.html
+http://soundbible.com/1005-Frying-Pan-Impact.html
+
+main spud smoosh
+http://soundbible.com/512-Squishy-2.html
+http://www.freesfx.co.uk/rx2/mp3s/6/18592_1464800237.mp3
+http://www.freesfx.co.uk/rx2/mp3s/6/17943_1464203423.mp3
+
+if user selects empty space (miss)
+http://soundbible.com/1081-Splat-And-Squirt.html -->

@@ -80,14 +80,11 @@ h1 {
 h2 {
 	font-size: 30px;
 	line-height: 1;
-	/*display: inline-block;*/
 }
 
 h3 {
 	font-size: 20px;
 	line-height: 1;
-	/*transform: rotate(-90deg);*/
-	/*display: inline-block;*/
 }
 
 ul {
@@ -107,7 +104,135 @@ li {
 	background-repeat: no-repeat;
 	background-color: #fe7f4a;
 	height: 100vh;
+	position: relative;
 }
+/*start of menu options overlay*/
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*display: none;*/
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #ecf0f1;
+	font-size: 22px;
+}
+
+.overlay h1 {
+	padding-left: 0;
+}
+
+.overlay-middle-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5.5%;
+}
+
+main {
+	width: 50%;
+	max-width: 600px;
+	padding-left: 9%;
+	padding-right: 2.5%;
+	text-align: right;
+}
+
+.characterInfoGallery {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-left: 2.5%;
+	padding-right: 4%;
+}
+
+.characterInfoCell {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 5%;
+}
+
+.characterPic {
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.characterPointValue {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 35px;
+}
+
+.characterDescription {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 35px;
+}
+
+/*reduce margin left to account for additional "-" in prev pts container*/
+.characterInfoCell:last-child .characterDescription {
+	margin-left: 32px;
+}
+
+.current-difficulty {
+	color: #ecf0f1;
+}
+
+.difficulty-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 45px;
+	padding-bottom: 35px;
+}
+
+.difficulty-button {
+	margin-left: 20px;
+	margin-right: 20px;
+	background: rgba(253, 246, 162, 0.3);
+	border: 2px solid rgba(253, 246, 162, 0.8);
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+.difficulty-button:hover {
+	color: #ecf0f1;
+	font-size: 1.2em;
+	transform: scale(1.05);
+	background-color: rgba(253, 246, 162, 0.7);
+}
+
+button.start {
+	width: 200px;
+	height: 60px;
+	background-color: rgba(1, 206, 191, 0.3);
+	border: 2px solid rgba(1, 206, 191, 0.9);
+	border-radius: 5px;
+	color: #ecf0f1;
+	font-size: 1.2em;
+	transition: all 0.2s ease-in-out;
+
+}
+
+button.start:hover {
+	font-size: 1.5em;
+	color: #ecf0f1;
+	transform: scale(1.05);
+	background-color: rgba(1, 206, 191, 0.7);
+}
+
+/*end of menu options overlay*/
 
 .spud-list {
 	height: 80vh;
@@ -149,13 +274,55 @@ li {
 .game-info {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	font-family: 'Orbitron', sans-serif;
 	background-color: #fe7f4a;
 	height: 10vh;
 	color: #432a1c;
 	padding-left: 5%;
+	padding-right: 5%;
+  	position: absolute;
+ 	bottom: 0;
+ 	width: 100%;
+}
+.LHS {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+}
+/*min width of 155px allows for a 5000pts score to fit without affecting location of adj containers*/
+.point-container {
+	min-width: 155px;
+}
+.time-container {
+	margin-left: 3.5%;
+	display: flex;
+}
+.time-container h3, .time-container h2 {
+	display: inline-block;
+}
+.time-container h3 {
+	line-height: 1.2;
+}
+/*min width of 135px allows for a 50s game time without affecting location of adj containers when game time drops to single digit*/
+.time-container h2 {
+	font-size: 56px;
+	margin-left: 4%;
+	min-width: 135px;
 }
 
+.menu-button {
+	background-color: #fe7f4a;
+	color:#432a1c;
+	font-size: 56px;
+	line-height: 1;
+	transition: all 0.2s ease-in-out;
+}
+
+.menu-button:hover {
+	font-size: 60px;
+	color: #ecf0f1;
+}
 
 /*
 	easy: 0.85s;
@@ -183,18 +350,6 @@ li {
 	transform: translateX(-50%);
 	width: 70%;
 }
-.time-container {
-	margin-left: 3.5%;
-}
-.time-container h3, .time-container h2 {
-	display: inline-block;
-}
-.time-container h3 {
-	line-height: 1.2;
-}
-.time-container h2 {
-	font-size: 56px;
-}
 
 /* H1 Media Query */
 @media (max-width: 830px) {
@@ -205,6 +360,12 @@ li {
 @media (max-width: 650px) {
 	.container h1 {
 		font-size: 60px;
+	}
+	.menu-button {
+		font-size: 54px;
+	}
+	.time-container h2 {
+		font-size: 54px;
 	}
 }
 @media (max-width: 550px) {
@@ -231,14 +392,14 @@ li {
 /*Hole and Spud media query*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 	.hole-content {
-		height: 115px; 
+		height: 70px; 
 	}
 	.hole-content__spud {
-		height: 115px;
-		transform: translate(-50%, 115px);
+		height: 70px;
+		transform: translate(-50%, 70px);
 	}
 	.animate--down {
-		transform: translate(-50%, 115px);
+		transform: translate(-50%, 70px);
 	}
 	.animate--up {
 		transition: all 1.5s;
@@ -280,8 +441,93 @@ li {
 		transform: translate(-50%, 0);
 	}
 }
+/*Game info Media*/
+@media (max-width: 650px) {
+	.menu-button { font-size: 54px; }
+	.time-container h2 { font-size: 54px; }
+}
+@media (max-width: 600px) {
+	.game-info h3 { display: none; }
+	.point-container h2 { font-size: 54px; }
+}
+@media (max-width: 507px) {
+	.time-container { 
+		margin: 0;
+		order: -1;
+	}
+	.game-info { align-items: center; }
+	.time-container h2 { 
+		margin: 0;
+		font-size: 42px;
+	 }
+	.LHS { padding-bottom: 0; }	
+	.point-container h2 { font-size: 42px; }
+	.menu-button { font-size: 42px; }
+}
+@media (max-width: 435px) {
+	.game-info { align-items: flex-end; }
+	.time-container h2 { font-size: 30px; }
+	.point-container h2 { font-size: 30px; }
+	.menu-button { font-size: 30px; }
+	.LHS { padding-bottom: 5px; }
+}
+
+/* Overlay media query */
+@media (max-width: 880px) { 
+	.overlay-middle-row { flex-wrap: wrap; }
+	.overlay-middle-row main {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 8%;
+		padding-left: 5.5%;
+		padding-right: 5.5%;
+	}
+	.characterInfoGallery {
+		width: 100%;
+	}
+	.characterInfoCell {
+		margin: 0 auto;
+		margin-bottom: 3%;
+	}
+}
+@media (max-width: 550px) { 
+	.overlay { font-size: 18px; }
+	button.start { 
+		width: 167px;
+		height: 40px;
+	}
+	.difficulty-buttons {
+		padding-top: 25px;
+		padding-bottom: 30px;
+	}
+}
+@media (max-width: 480px) { 
+	.main {
+		padding-left: 10.5%;
+		padding-right: 10.5%;
+	}
+	.characterInfoCell {
+		margin-bottom: 5%;
+	}
+}
+@media (max-width: 412px) { 
+	.overlay { font-size: 16px; }
+	button.start { 
+		width: 155px;
+		height: 30px;
+		margin-bottom: 5px;
+	}
+}
+@media (max-width: 366px) {
+	.overlay h1 { display: none; }
+	.characterPic {
+		width: 40px;
+		height: 45px;
+	}
+}
 /*#spud-0:hover .spud-container__spud {
     /*transform: translateY(0);*/
+
 
 
 
