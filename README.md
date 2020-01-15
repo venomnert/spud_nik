@@ -5,3 +5,5 @@ Spud Nik is a game built using HTML, CSS and Jquery. It was a proof of concept t
 the canvas element.
 
 Try out the game: https://venomnert.github.io/spud_nik/
+
+![Spud Nik](https://raw.githubusercontent.com/venomnert/spud_nik/nert/screenshot.png)
